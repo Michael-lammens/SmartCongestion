@@ -19,3 +19,5 @@ Slowstart sends packets at an initial window size of 2.
   - If a process enters when others have converged, our slow start should trigger their slow starts at an optimal starting point such that the impact on all CCAs is minimal. new process should be able to interpret the network responses accordingly and find some way of interpreting the data such that it can find its relative share.
   - Ideally all CCA's connected should enter their convergence at the same time as to not trigger another slow start and start process over again.
     - This alone would result in a runaway/domino slowstart loop. However maybe as long as the CCA's can find optimal windowsize reduction factors with respect to their knowledge of the network, the effect would be minimal? 
+
+We will visualize the performance and results through our own visualizer: https://github.com/Michael-lammens/NetworkSimulation
