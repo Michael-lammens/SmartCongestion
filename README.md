@@ -4,15 +4,15 @@ Independent / Isolated client based congestion control. Each client CCA uses onl
 Our server will be as simple as possible. 
 
 - 1 single bottleneck area Queue
-- Concurrent data-link area where concurrent packet processing is capped at the servers max bytes per second
+- Data-link area where concurrency is capped at the servers max bytes per second
 - Minimum RTT, non congestive.
-- Non deterministic delay D, non congestive.
+- Non-deterministic delay D, non congestive.
 
 Current idea:
 
 Slowstart sends packets at an initial window size of 2.
   - Observe the average RTT relative to throughput for these packets. Track this in a slowstart struct or BestRatio. WS=2, AvgRTT = 1, Avg throughput = 60
-  - Double window size. Do the same thing again. Observe the ratio of RTT to Throughput. If the ratio begins to worsen, start convergence process at the best ratio'd window size
+  - Double window size. Repeat. Observe the ratio of RTT to Throughput. If the ratio begins to worsen, start convergence process at the best ratio'd window size
     with the hopes of converging.
   - During convergence, adjust window size granularly based on relative changes in network conditions
   - If rtt or throughput changes drastically(Another sender stops OR another connection is established), restart slow start process at some reduced factor relative to the scale of the network changes detected. New processes with little data stored would not know what optimal? - What to do here
