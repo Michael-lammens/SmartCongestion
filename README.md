@@ -1,5 +1,5 @@
 # SmartCongestion
-Independent / Isolated client based congestion control. Each client CCA uses only it's acquired knowledge since inception to predict congestion. We are trying to build isloated CCA based clients that can naturally adapt to network changes, solely on the analysis of its own available data, without any communication with the server or other CCA's. CCA's use bayesian inference methods with the goal of collectively converging at an optimal throughput to RTT ratio and in a relatively timely matter. 
+Independent / Isolated client based congestion control. Each client CCA uses only it's acquired knowledge since inception to predict congestion. We are trying to build CCA based clients that can naturally adapt to network changes, solely on the analysis of its own available data, without any communication with the server or other CCA's. CCA's use inference methods with the goal of collectively converging at an optimal throughput to RTT ratio and in a relatively timely matter. 
 
 Our server will be as simple as possible. 
 
